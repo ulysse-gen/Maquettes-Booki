@@ -13,6 +13,7 @@
 
 body {
     padding: 0 40px 0 40px;
+    font-family: 'Raleway', sans-serif;
 }
 
 header {
@@ -21,6 +22,13 @@ header {
     align-items: center;
     display: flex;
     height: 75px;
+}
+
+main {
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
 }
 
 .main-logo {
@@ -39,23 +47,19 @@ header {
 }
 
 .main-nav a {
-    font-family: 'Raleway', sans-serif;
+    transition: color 200ms, border 200ms;
     border-top: 2px solid transparent;
-    padding: 12% 42px 0 42px;
-    margin: 0 3px 0 3px;
-    text-decoration: none;
     color: rgb(124, 124, 124);
-    display: flex;
+    padding: 12% 42px 0 42px;
+    text-decoration: none;
+    margin: 0 3px 0 3px;
     font-weight: 500;
+    display: flex;
 }
 
 .main-nav a:hover {
     border-top: 2px solid var(--blue);
     color: var(--blue);
-}
-
-.top {
-    font-family: 'Raleway', sans-serif;
 }
 
 .top h2 {
@@ -75,6 +79,7 @@ header {
     height: 40px;
     background-color: var(--grey);
 }
+
 .top .search-bar .icon {
     width: 40px;
     height: 100%;
@@ -90,22 +95,21 @@ header {
 }
 
 .top .search-bar input[type=text] {
-    border-top: 2px solid var(--grey);
     border-bottom: 2px solid var(--grey);
-    font-family: 'Raleway', sans-serif;
-    font-weight: 600;
+    border-top: 2px solid var(--grey);
     padding-left: 10px;
+    font-weight: 600;
 }
 
 .top .search-bar input[type=submit] {
-    cursor: pointer;
-    border-top-right-radius: 10px;
+    transition: background-color 200ms, color 200ms;
     border-bottom-right-radius: 10px;
-    color: white;
+    border-top-right-radius: 10px;
     background-color: var(--blue);
-    font-family: 'Raleway', sans-serif;
     padding: 0 15px 0 15px;
     font-weight: 600;
+    cursor: pointer;
+    color: white;
 }
 
 .top .filters {
@@ -124,15 +128,16 @@ header {
 }
 
 .top .filters .filter {
-    text-decoration: none;
-    color: unset;
-    margin: 0 0 0 20px;
-    padding: 0 15px 0 0;
+    transition: background-color 200ms, border 200ms, color 200ms;
     border: 2px solid rgb(184, 184, 184);
+    text-decoration: none;
     border-radius: 20px;
+    padding: 0 15px 0 0;
+    margin: 0 0 0 20px;
     line-height: 36px;
     font-weight: 600;
     display: flex;
+    color: unset;
 }
 
 .top .filters .filter:hover {
@@ -141,29 +146,38 @@ header {
 }
 
 .top .filters .filter .icon {
+    transition: background-color 200ms, border 200ms, color 200ms;
     background-color: var(--lighter-blue);
     justify-content: center;
+    margin: -2px 7px 0 -2px;
     align-items: center;
     border-radius: 50%;
-    margin: 0 7px 0 0;
     display: flex;
-    height: 36px;
-    width: 36px;
+    height: 40px;
+    width: 40px;
+}
+
+.top .filters .filter:hover .icon {
+    background-color: var(--blue);
 }
 
 .top .filters .filter .icon i {
-    color: var(--blue)
+    transition: background-color 200ms, border 200ms, color 200ms;
+    color: var(--blue);
 }
 
-.info {
-    display: flex;
-    margin-top: 40px;
+.top .filters .filter:hover .icon i {
+    color: white;
+}
+
+.top .info {
     align-items: center;
-    font-family: 'Raleway', sans-serif;
     line-height: 25px;
+    margin-top: 40px;
+    display: flex;
 }
 
-.info .icon {
+.top .info .icon {
     width: 25px;
     height: 25px;
     display: flex;
@@ -173,4 +187,140 @@ header {
     align-items: center;
     justify-content: center;
     border: 1px solid rgb(184, 184, 184);
+}
+
+.hebergements {
+    justify-content: space-around;
+    margin-top: 40px;
+    display: flex;
+    flex-grow: 1;
+}
+
+.hebergements .container {
+    background-color: var(--grey);
+    flex-direction: column;
+    border-radius: 20px;
+    min-width: 30%;
+    padding: 40px;
+    display: flex;
+    display: flex;
+}
+
+.hebergements #hebergements {
+    flex-grow: 3;
+    margin-right: 40px;
+}
+
+.hebergements .container .top {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+
+.hebergements .container .top .title {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.hebergements .container .list {
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    display: flex;
+    width: 100%;
+}
+
+.hebergements .container .list .card {
+    box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
+    background-color: white;
+    padding: 5px 5px 10px 5px;
+    flex-direction: column;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    height: fit-content;
+    display: flex;
+    width: 30%;
+}
+
+.hebergements .container .list .card picture {
+    height: 125px;
+    width: 100%;
+}
+
+.hebergements .container .list .card picture img {
+    border-radius: 15px 15px 0 0;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.hebergements .container .list .card .infos {
+    flex-direction: column;
+    margin: 10px 0 0 15px;
+    display: flex;
+}
+
+.hebergements .container .list .card .infos .name {
+    font-weight: bold;
+}
+
+.hebergements .container .list .card .infos .starts-from {
+    margin: 5px 0 0 0;
+}
+
+.hebergements .container .list .card .infos .starts-from .price {
+    font-weight: bolder;
+}
+
+.hebergements .container .list .card .infos .rating {
+    color: var(--grey);
+    margin: 5px 0 0 0;
+}
+
+.hebergements .container .list .card .infos .rating .filled {
+    color: var(--blue);
+}
+
+.hebergements .container .more {
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.hebergements #trendings .list {
+    flex-direction: column;
+}
+
+.hebergements #trendings .list .card {
+    width: 100%;
+    flex-direction: row;
+}
+
+.hebergements #trendings .list .card {
+    width: 100%;
+    height: 160px;
+    flex-direction: row;
+    padding: 5px 5px 5px 5px;
+}
+
+.hebergements #trendings .list .card picture {
+    width: 40%;
+    height: 100%;
+}
+
+.hebergements #trendings .list .card picture img {
+    border-radius: 15px 0 0 15px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.hebergements #trendings .list .card .infos .name {
+    font-size: 18px;
+}
+
+.hebergements #trendings .list .card .infos .rating {
+    margin: auto 0 5px 0;
 }
