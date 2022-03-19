@@ -1,0 +1,6 @@
+projectKey=Maquettes-Booki
+serverUrl=http://localhost:9000
+serverVersion=9.3.0.51899
+dashboardUrl=http://localhost:9000/dashboard?id=Maquettes-Booki
+ceTaskId=AX-kf5qLLr_11Nf9HxQP
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AX-kf5qLLr_11Nf9HxQP
