@@ -203,7 +203,6 @@ main {
     min-width: 30%;
     padding: 40px;
     display: flex;
-    display: flex;
 }
 
 .hebergements #hebergements {
@@ -292,11 +291,6 @@ main {
 
 .hebergements #trendings .list {
     flex-direction: column;
-}
-
-.hebergements #trendings .list .card {
-    width: 100%;
-    flex-direction: row;
 }
 
 .hebergements #trendings .list .card {
