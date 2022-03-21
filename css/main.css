@@ -12,11 +12,11 @@
 }
 
 body {
-    padding: 0 40px 0 40px;
     font-family: 'Raleway', sans-serif;
 }
 
 header {
+    margin: 0 40px 0 40px;
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
@@ -31,22 +31,22 @@ main {
     flex-direction: column;
 }
 
-.main-logo {
+header .main-logo {
     height: 100%;
 }
 
-.main-logo img {
+header .main-logo img {
     margin-top: 40%;
     height: 50%;
 }
 
-.main-nav {
+header .main-nav {
     padding: 0 20px 0 0;
     display: flex;
     height: 100%;
 }
 
-.main-nav a {
+header .main-nav a {
     transition: color 200ms, border 200ms;
     border-top: 2px solid transparent;
     color: rgb(124, 124, 124);
@@ -57,22 +57,26 @@ main {
     display: flex;
 }
 
-.main-nav a:hover {
+header .main-nav a:hover {
     border-top: 2px solid var(--blue);
     color: var(--blue);
 }
 
-.top h2 {
+main .top-container {
+    margin: 0 40px 0 40px;
+}
+
+main .top-container h2 {
     margin-bottom: 0px;
     font-size: 20px;
 }
 
-.top p {
+main .top-container p {
     margin-top: 10px;
     color: rgb(124, 124, 124);
 }
 
-.top .search-bar {
+main .top-container .search-bar {
     width: fit-content;
     border-radius: 10px;
     display: flex;
@@ -80,7 +84,7 @@ main {
     background-color: var(--grey);
 }
 
-.top .search-bar .icon {
+main .top-container .search-bar .icon {
     width: 40px;
     height: 100%;
     display: flex;
@@ -88,20 +92,20 @@ main {
     align-items: center;
 }
 
-.top .search-bar input {
+main .top-container .search-bar input {
     border: none;
     outline: none;
     height: 100%;
 }
 
-.top .search-bar input[type=text] {
+main .top-container .search-bar input[type=text] {
     border-bottom: 2px solid var(--grey);
     border-top: 2px solid var(--grey);
     padding-left: 10px;
     font-weight: 600;
 }
 
-.top .search-bar input[type=submit] {
+main .top-container .search-bar input[type=submit] {
     transition: background-color 200ms, color 200ms;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
@@ -112,7 +116,7 @@ main {
     color: white;
 }
 
-.top .filters {
+main .top-container .filters {
     margin: 25px 0 0 0;
     font-family: 'Raleway', sans-serif;
     width: fit-content;
@@ -121,13 +125,13 @@ main {
 }
 
 
-.top .filters .display {
+main .top-container .filters .display {
     height: 40px;
     line-height: 40px;
     font-weight: 600;
 }
 
-.top .filters .filter {
+main .top-container .filters .filter {
     transition: background-color 200ms, border 200ms, color 200ms;
     border: 2px solid rgb(184, 184, 184);
     text-decoration: none;
@@ -140,12 +144,12 @@ main {
     color: unset;
 }
 
-.top .filters .filter:hover {
+main .top-container .filters .filter:hover {
     background-color: var(--lighter-blue);
     border: 2px solid var(--blue);
 }
 
-.top .filters .filter .icon {
+main .top-container .filters .filter .icon {
     transition: background-color 200ms, border 200ms, color 200ms;
     background-color: var(--lighter-blue);
     justify-content: center;
@@ -157,27 +161,27 @@ main {
     width: 40px;
 }
 
-.top .filters .filter:hover .icon {
+main .top-container .filters .filter:hover .icon {
     background-color: var(--blue);
 }
 
-.top .filters .filter .icon i {
+main .top-container .filters .filter .icon i {
     transition: background-color 200ms, border 200ms, color 200ms;
     color: var(--blue);
 }
 
-.top .filters .filter:hover .icon i {
+main .top-container .filters .filter:hover .icon i {
     color: white;
 }
 
-.top .info {
+main .top-container .info {
     align-items: center;
     line-height: 25px;
     margin-top: 40px;
     display: flex;
 }
 
-.top .info .icon {
+main .top-container .info .icon {
     width: 25px;
     height: 25px;
     display: flex;
@@ -189,132 +193,199 @@ main {
     border: 1px solid rgb(184, 184, 184);
 }
 
-.hebergements {
+main .container {
     justify-content: space-around;
-    margin-top: 40px;
+    margin: 40px 25px -15px 25px;
+    flex-wrap: wrap;
     display: flex;
-    flex-grow: 1;
 }
 
-.hebergements .container {
+main .container .content {
     background-color: var(--grey);
     flex-direction: column;
+    margin: 15px 15px 15px 15px;
     border-radius: 20px;
-    min-width: 30%;
     padding: 40px;
     display: flex;
+    flex: 2 0 60%;
 }
 
-.hebergements #hebergements {
-    flex-grow: 3;
-    margin-right: 40px;
-}
-
-.hebergements .container .top {
+main .container .content .top {
     justify-content: space-between;
     align-items: center;
     display: flex;
     width: 100%;
 }
 
-.hebergements .container .top .title {
+main .container .content .top .title {
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 19px;
+    margin-left: 10px;
 }
 
-.hebergements .container .list {
+main .container .content .list {
     justify-content: space-between;
-    margin-top: 20px;
+    margin: 20px 0 0 0;
     flex-wrap: wrap;
     display: flex;
     width: 100%;
 }
 
-.hebergements .container .list .card {
+main .container .content .list .card {
     box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
     background-color: white;
     padding: 5px 5px 10px 5px;
     flex-direction: column;
     border-radius: 20px;
-    margin-bottom: 30px;
     height: fit-content;
+    min-width: 215px;
+    flex: 1 0 30%;
     display: flex;
-    width: 30%;
+    margin: 10px;
+    width: 60%;
 }
 
-.hebergements .container .list .card picture {
+main .container .content .list .card picture {
     height: 125px;
     width: 100%;
 }
 
-.hebergements .container .list .card picture img {
+main .container .content .list .card picture img {
     border-radius: 15px 15px 0 0;
     object-fit: cover;
     height: 100%;
     width: 100%;
 }
 
-.hebergements .container .list .card .infos {
+main .container .content .list .card .infos {
     flex-direction: column;
     margin: 10px 0 0 15px;
     display: flex;
 }
 
-.hebergements .container .list .card .infos .name {
+main .container .content .list .card .infos .name {
     font-weight: bold;
 }
 
-.hebergements .container .list .card .infos .starts-from {
+main .container .content .list .card .infos .starts-from {
     margin: 5px 0 0 0;
 }
 
-.hebergements .container .list .card .infos .starts-from .price {
+main .container .content .list .card .infos .starts-from .price {
     font-weight: bolder;
 }
 
-.hebergements .container .list .card .infos .rating {
+main .container .content .list .card .infos .rating {
     color: var(--grey);
     margin: 5px 0 0 0;
 }
 
-.hebergements .container .list .card .infos .rating .filled {
+main .container .content .list .card .infos .rating .filled {
     color: var(--blue);
 }
 
-.hebergements .container .more {
-    margin-top: 15px;
+main .container .content .more {
+    margin: 30px 0 30px 0;
     cursor: pointer;
     font-size: 20px;
     font-weight: 600;
 }
 
-.hebergements #trendings .list {
-    flex-direction: column;
+main .container #trendings {
+    flex: 1 0 30%;
 }
 
-.hebergements #trendings .list .card {
-    width: 100%;
-    height: 160px;
-    flex-direction: row;
-    padding: 5px 5px 5px 5px;
-}
-
-.hebergements #trendings .list .card picture {
-    width: 40%;
+main .container #trendings .list {
     height: 100%;
+    align-items: center;
 }
 
-.hebergements #trendings .list .card picture img {
+main .container #trendings .list .card {
+    padding: 5px 5px 5px 5px;
+    flex-direction: row;
+    flex: 1 0 100%;
+    margin: 0;
+}
+
+main .container #trendings .list .card picture {
+    flex: 1 0 40%;
+}
+
+main .container #trendings .list .card picture img {
     border-radius: 15px 0 0 15px;
-    width: 100%;
-    object-fit: cover;
 }
 
-.hebergements #trendings .list .card .infos .name {
+main .container #trendings .list .card .infos .name {
     font-size: 18px;
 }
 
-.hebergements #trendings .list .card .infos .rating {
+main .container #trendings .list .card .infos .rating {
     margin: auto 0 5px 0;
+}
+
+main .container #activities {
+    background-color: transparent;
+    padding: 0;
+}
+
+main .container #activities .list {
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 500px;
+}
+
+main .container #activities .list .card {
+    flex-direction: column;
+    max-height: 46%;
+    max-width: 21%;
+    display: flex;
+    flex: 1 0 60%;
+    padding: 0;
+    margin: 0;
+}
+
+main .container #activities .list .card picture {
+    flex: 1 0 10%;
+}
+
+main .container #activities .list .card picture img {
+    object-fit: cover;
+}
+
+main .container #activities .list .card.higher {
+    max-height: 100%;
+    flex: 1 0 100%;
+}
+
+main .container #activities .list .card .infos {
+    margin: 20px 0 20px 20px;
+}
+
+footer {
+    background-color: var(--grey);
+    padding: 20px 0 10px 50px;
+    height: fit-content;
+    flex-direction: row;
+    margin-top: 40px;
+    display: flex;
+    width: 100%;
+}
+
+footer div {
+    flex-direction: column;
+    margin: 0 20% 0 0;
+    display: flex;
+}
+
+footer div .title {
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+footer div .option {
+    padding-bottom: 5px;
+    font-size: 14px;
 }
