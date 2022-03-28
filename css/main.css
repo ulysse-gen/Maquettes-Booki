@@ -58,7 +58,7 @@ header .main-nav a:hover, header .main-nav a.selected {
 
 main {
     height: fit-content;
-    width: fit-content;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -78,35 +78,44 @@ main .top-container p {
 }
 
 main .top-container .top-container__search-bar {
-    width: fit-content;
+    background-color: var(--grey);
     border-radius: 10px;
     display: flex;
     height: 40px;
-    background-color: var(--grey);
+    flex: 1 1 100%;
+    width: fit-content;
 }
 
 main .top-container .top-container__search-bar .icon {
     width: 40px;
-    height: 100%;
+    height: 40px;
     display: flex;
-    justify-content: center;
+    flex: 0 0 40px;
     align-items: center;
+    justify-content: center;
 }
 
-main .top-container .top-container__search-bar input {
-    border: none;
+main .top-container .top-container__search-bar form {
+    display: flex;
+    flex: 1 1;
+}
+
+main .top-container .top-container__search-bar form input {
     outline: none;
+    border: none;
     height: 100%;
 }
 
-main .top-container .top-container__search-bar input[type=text] {
+main .top-container .top-container__search-bar form input[type=text] {
     border-bottom: 2px solid var(--grey);
     border-top: 2px solid var(--grey);
     padding-left: 10px;
     font-weight: 600;
 }
 
-main .top-container .top-container__search-bar input[type=submit] {
+main .top-container .top-container__search-bar form button[type=submit] {
+    border: none;
+    outline: none;
     transition: background-color 200ms, color 200ms;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
@@ -115,6 +124,10 @@ main .top-container .top-container__search-bar input[type=submit] {
     font-weight: 600;
     cursor: pointer;
     color: white;
+}
+
+.top-container__search-bar__submit-mobile {
+    display: none !important;
 }
 
 main .top-container .filters {
@@ -131,6 +144,7 @@ main .top-container .filters .display {
     line-height: 40px;
     font-weight: 600;
     height: 40px;
+    margin-right: 15px;
 }
 
 main .top-container .filters .filter {
@@ -415,11 +429,14 @@ footer div .option {
     }
 
     header .main-logo {
-        height: 10vh;
+        align-items: center;
+        display: flex;
+        height: 100px;
     }
     
     header .main-logo img {
-        height: 50%;
+        margin: 0;
+        height: 60%;
     }
 
     header .main-nav {
@@ -432,7 +449,7 @@ footer div .option {
         border-bottom: 2px solid var(--grey);
         justify-content: center;
         text-align: center;
-        padding: 10% 0 5% 0;
+        padding: 10px 0 5% 0;
         margin:0;
         flex: 0 0 50%;
         display: flex;
@@ -457,11 +474,32 @@ footer div .option {
     }
 
     main .top-container .top-container__search-bar {
-        flex: 1;
+        flex: 1 1 100%;
+        width: 100%;
+        height: 50px;
     }
 
-    main .top-container .top-container__search-bar input[type=submit] {
+    main .top-container .top-container__search-bar .icon {
+        width: 50px;
+        height: 50px;
+        flex: 0 0 50px;
+    }
+
+    main .top-container .top-container__search-bar input[type=text] {
+        flex: 1 1 100%;
+    }
+
+    main .top-container .top-container__search-bar button[type=submit] {
         border-radius: 10px;
+        width: 50px;
+    }
+
+    .top-container__search-bar__submit-desktop {
+        display: none !important;
+    }
+
+    .top-container__search-bar__submit-mobile {
+        display: block !important;
     }
 
     main .top-container .filters {
@@ -480,6 +518,56 @@ footer div .option {
 
     main .top-container .info {
         margin-top: 20px;
+    }
+
+    main .container {
+        margin: 40px 0px -15px 0px;
+    }
+
+    main .container .content {
+        margin: 15px 0 15px 0;
+        border-radius: 0;
+        padding: 20px 15px 20px 15px;
+        order: 1;
+    }
+
+    main .container .content .more {
+        margin-left: 15px;
+    }
+
+    main .container #trendings {
+        order: 0;
+        padding: 20px 20px 0 20px;
+        justify-self: flex-start;
+    }
+
+    main .container #hebergements {
+        background-color: transparent;
+    }
+
+    main .container #activities {
+        padding: 0 25px 0 25px;
+    }
+
+    main .container #activities .list {
+        height: fit-content;
+        flex-wrap: nowrap;
+    }
+
+    main .container #activities .list .card, main .container #activities .list .card.higher {
+        all: unset;
+        width: 100%;
+        height: fit-content;
+        border-radius: 15px;
+        box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
+        margin-bottom: 15px;
+    }
+
+    main .container #activities .list .card picture img {
+        border-radius: 15px 15px 0 0;
+        object-fit: cover;
+        height: 150px;
+        width: 100%;
     }
 
     footer {
