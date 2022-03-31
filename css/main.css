@@ -44,6 +44,7 @@ header .main-nav a {
     transition: color 200ms, border 200ms;
     border-top: 2px solid transparent;
     color: rgb(124, 124, 124);
+    height: fit-content;
     padding: 12% 42px 0 42px;
     text-decoration: none;
     margin: 0 3px 0 3px;
@@ -154,6 +155,7 @@ main .top-container .filters .filter {
     flex: 0 0 fit-content;
     border-radius: 20px;
     padding: 0 15px 0 0;
+    margin: 0 15px 0 0;
     line-height: 36px;
     font-weight: 600;
     display: flex;
@@ -321,6 +323,7 @@ main .container #trendings .list {
 main .container #trendings .list .card {
     padding: 5px 5px 5px 5px;
     flex-direction: row;
+    max-height: 200px;
     flex: 1 0 100%;
     height: 30%;
     margin: 0;
@@ -419,6 +422,12 @@ footer div .option {
     font-size: 14px;
 }
 
+@media only screen and (max-width : 1365px) {
+    main .container .content, main .container .content#trendings {
+        flex: 1 0 50%;
+    }
+}
+
 @media only screen and (max-width : 992px) {
     /* Styles */
     header {
@@ -449,7 +458,7 @@ footer div .option {
         border-bottom: 2px solid var(--grey);
         justify-content: center;
         text-align: center;
-        padding: 10px 0 5% 0;
+        padding: 10px 0 20px 0;
         margin:0;
         flex: 0 0 50%;
         display: flex;
@@ -526,8 +535,9 @@ footer div .option {
 
     main .container .content {
         margin: 15px 0 15px 0;
-        border-radius: 0;
         padding: 20px 15px 20px 15px;
+        border-radius: 0;
+        flex: 1 0 100%;
         order: 1;
     }
 
@@ -551,12 +561,13 @@ footer div .option {
 
     main .container #activities .list {
         height: fit-content;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
+        flex-direction: row;
     }
 
     main .container #activities .list .card, main .container #activities .list .card.higher {
         all: unset;
-        width: 100%;
+        width: 30%;
         height: fit-content;
         border-radius: 15px;
         box-shadow: rgba(0, 0, 0, 0.20) 0px 5px 15px;
@@ -578,5 +589,19 @@ footer div .option {
     footer div {
         flex: 1 0 100%;
         padding: 0 0 20px 30px;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    main .container #hebergements .list .card {
+        flex: 1 0 90%;
+    }
+    main .container #activities .list {
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    main .container #activities .list .card, main .container #activities .list .card.higher {
+        width: 100%;
     }
 }
