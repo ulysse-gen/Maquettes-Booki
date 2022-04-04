@@ -52,7 +52,8 @@ header .main-nav a {
     display: flex;
 }
 
-header .main-nav a:hover, header .main-nav a.selected {
+header .main-nav a:hover,
+header .main-nav a.selected {
     border-top: 2px solid var(--blue);
     color: var(--blue);
 }
@@ -423,12 +424,15 @@ footer div .option {
 }
 
 @media only screen and (max-width : 1365px) {
-    main .container .content, main .container .content#trendings {
+
+    main .container .content,
+    main .container .content#trendings {
         flex: 1 0 50%;
     }
 }
 
 @media only screen and (max-width : 992px) {
+
     /* Styles */
     header {
         flex-direction: column;
@@ -442,7 +446,7 @@ footer div .option {
         display: flex;
         height: 100px;
     }
-    
+
     header .main-logo img {
         margin: 0;
         height: 60%;
@@ -455,16 +459,18 @@ footer div .option {
     }
 
     header .main-nav a {
+        border: none;
         border-bottom: 2px solid var(--grey);
         justify-content: center;
         text-align: center;
         padding: 10px 0 20px 0;
-        margin:0;
+        margin: 0;
         flex: 0 0 50%;
         display: flex;
     }
 
-    header .main-nav a:hover, header .main-nav a.selected {
+    header .main-nav a:hover,
+    header .main-nav a.selected {
         border: none;
         border-bottom: 2px solid var(--blue);
     }
@@ -476,7 +482,7 @@ footer div .option {
     main .top-container {
         margin: 0 20px 0 20px;
     }
-    
+
     main .top-container h2 {
         margin: 40px 0 0 0;
         font-size: 20px;
@@ -519,7 +525,7 @@ footer div .option {
     main .top-container .filters .display {
         flex: 1 1 100%;
     }
-    
+
     main .top-container .filters .filter {
         flex: 0 0 fit-content;
         margin: 0 10px 10px 0;
@@ -565,7 +571,8 @@ footer div .option {
         flex-direction: row;
     }
 
-    main .container #activities .list .card, main .container #activities .list .card.higher {
+    main .container #activities .list .card,
+    main .container #activities .list .card.higher {
         all: unset;
         width: 30%;
         height: fit-content;
@@ -596,12 +603,14 @@ footer div .option {
     main .container #hebergements .list .card {
         flex: 1 0 90%;
     }
+
     main .container #activities .list {
         flex-wrap: nowrap;
         flex-direction: column;
     }
 
-    main .container #activities .list .card, main .container #activities .list .card.higher {
+    main .container #activities .list .card,
+    main .container #activities .list .card.higher {
         width: 100%;
     }
 }
